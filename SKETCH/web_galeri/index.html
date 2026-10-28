@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Katalog Karya - Mishbech</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #0b0f17; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 25px 12px; width: 100%; overflow-x: hidden; }
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { font-size: 1.8rem; color: #58a6ff; margin-bottom: 6px; }
+        .header p { color: #8b949e; font-size: 0.9rem; }
+        .counter { display: inline-block; margin-top: 10px; background: rgba(56, 139, 253, 0.15); border: 1px solid rgba(56, 139, 253, 0.3); color: #58a6ff; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; width: 100%; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; width: 100%; min-width: 0; }
+        .img-container { position: relative; width: 100%; aspect-ratio: 4/5; background: #010409; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .img-container img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .badge { position: absolute; top: 10px; padding: 3px 8px; border-radius: 5px; font-size: 0.7rem; font-weight: bold; }
+        .badge-id { left: 10px; background: #1f6feb; color: #fff; }
+        .badge-year { left: 65px; background: rgba(255,255,255,0.15); color: #fff; }
+        .card-content { padding: 14px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-title { font-size: 1rem; margin-bottom: 4px; color: #f0f6fc; word-break: break-word; }
+        .card-meta { font-size: 0.75rem; color: #8b949e; margin-bottom: 10px; }
+        .pricing-box { display: flex; justify-content: space-between; background: rgba(0,0,0,0.25); border: 1px solid #30363d; padding: 8px 10px; border-radius: 6px; margin-bottom: 10px; }
+        .price-col .label { display: block; font-size: 0.65rem; color: #8b949e; }
+        .price-col .val { font-size: 0.95rem; font-weight: bold; color: #58a6ff; }
+        .price-col .val.free { color: #3fb950; font-size: 0.8rem; }
+        .contact-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+        .btn { text-align: center; padding: 7px; border-radius: 6px; text-decoration: none; font-size: 0.75rem; font-weight: 600; color: #fff; }
+        .btn-dm { background: #e1306c; }
+        .btn-email { background: #238636; }
+        .statement { font-size: 0.75rem; font-style: italic; color: #c9d1d9; line-height: 1.35; margin-bottom: 10px; }
+        .detail-box summary { font-size: 0.75rem; color: #58a6ff; cursor: pointer; padding: 4px 0; }
+        .curatorial-text { font-size: 0.72rem; color: #8b949e; line-height: 1.4; margin-top: 6px; background: #0d1117; padding: 8px; border-radius: 6px; }
+        footer { text-align: center; margin-top: 40px; font-size: 0.75rem; color: #484f58; }
+
+        /* MODE SMARTPHONE: KUNCI 2 KOLOM KARTU */
+        @media screen and (max-width: 768px) {
+            body { padding: 12px 6px; }
+            .header h1 { font-size: 1.25rem; }
+            .header p { font-size: 0.75rem; }
+            .gallery-grid { grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
+            .card { border-radius: 8px; }
+            .card-content { padding: 8px 6px; }
+            .card-title { font-size: 0.8rem; line-height: 1.2; margin-bottom: 2px; }
+            .card-meta { font-size: 0.65rem; margin-bottom: 6px; }
+            .pricing-box { padding: 4px 6px; margin-bottom: 6px; flex-direction: column; gap: 2px; }
+            .price-col .label { font-size: 0.55rem; }
+            .price-col .val { font-size: 0.8rem; }
+            .price-col .val.free { font-size: 0.7rem; }
+            .contact-actions { grid-template-columns: 1fr; gap: 4px; margin-bottom: 6px; }
+            .btn { padding: 5px; font-size: 0.65rem; }
+            .statement { font-size: 0.65rem; line-height: 1.2; margin-bottom: 6px; }
+            .detail-box summary { font-size: 0.65rem; }
+            .curatorial-text { font-size: 0.62rem; padding: 6px; }
+            .badge { top: 5px; padding: 2px 5px; font-size: 0.58rem; }
+            .badge-id { left: 5px; }
+            .badge-year { left: 45px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Katalog Karya Mishbech</h1>
+        <p>Arsip Studi Visual, Sketsa Spontan & Gambar Orisinal</p>
+        <div class="counter">Total Terarsip: 1 Karya</div>
+    </div>
+    <div class="gallery-grid">
+        <div class="card" data-id="SKT-001">
+            <div class="img-container">
+                <span class="badge badge-id">SKT-001</span>
+                <span class="badge badge-year">2026</span>
+                <img src="images/SKT-001.jpg?v=1793199047" alt="Kemenangan di Ruang Kosong" loading="lazy"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' width='400' height='500' viewBox='0 0 400 500'><rect fill='%23161b22' width='400' height='500'/><text fill='%238b949e' font-family='sans-serif' font-size='18' dy='10.5' font-weight='bold' x='50%' y='50%' text-anchor='middle'>SKT-001</text></svg>';" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Kemenangan di Ruang Kosong</h3>
+                <p class="card-meta">29.7 cm x 42 cm • Tinta di atas kertas</p>
+                <div class="pricing-box">
+                    <div class="price-col"><span class="label">Karya Original</span><span class="val">$ 100</span></div>
+                    <div class="price-col"><span class="label">Pengiriman</span><span class="val free">Bebas Ongkir</span></div>
+                </div>
+                <div class="contact-actions">
+                    <a href="[https://ig.me/m/](https://ig.me/m/)asmokumis_" target="_blank" class="btn btn-dm">✉️ DM IG</a>
+                    <a href="mailto:misbachuddin.99@gmail.com?subject=Inquiry%20SKT-001%20-%20Kemenangan di Ruang Kosong" class="btn btn-email">✉️ Email</a>
+                </div>
+                <p class="statement">"Dalam setiap garis yang menghiasi permukaan, terdapat suara dari masa lalu yang dinyatakan dalam bentuk yang tidak pernah selesai. Setiap titik hitam adalah sebuah jalan yang dibuat oleh hati yang tenang dan berjuang untuk menyentuh kebenaran."</p>
+                <details class="detail-box">
+                    <summary>• Detail & Kuratorial</summary>
+                    <div class="curatorial-text"><p>Karya ini menggambarkan keseimbangan antara ruang dan bentuk dengan cara yang sangat dinamis. Garis-garis yang digunakan menunjukkan pergerakan tubuh yang tidak teratur, namun tetap dalam konteks simbolik dari kehadiran manusia. Kontras gelap-terang menciptakan efek visual yang mendalam, menggambarkan ketenangan dan keterbatasan dalam ruang yang kosong. Komposisi bentuknya menonjolkan struktur sederhana namun memiliki makna yang kompleks, mengingatkan pada proses pencarian kebenaran yang terus bergerak.</p></div>
+                </details>
+            </div>
+        </div>
+        </div>
+    <footer>&copy; 2026 Mishbech. Seluruh Hak Cipta Dilindungi.</footer>
+</body>
+</html>

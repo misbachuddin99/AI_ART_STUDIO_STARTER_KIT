@@ -1,0 +1,11 @@
+{
+  "ARTIST_NAME": "Mishbech",
+  "ARTIST_EMAIL": "misbachuddin.99@gmail.com",
+  "INSTAGRAM_USERNAME": "asmokumis_",
+  "TELEGRAM_BOT_TOKEN": "9218482866:AAFLRKceDNsove37FTiHP5bRJwtisGeMZL8",
+  "AUTHORIZED_USER_ID": 5811346593,
+  "LM_STUDIO_URL": "http://localhost:1234/v1/chat/completions",
+  "DEFAULT_SKETCH_SIZE": "29.7 cm x 42 cm",
+  "DEFAULT_SKETCH_MEDIA": "Tinta di atas kertas",
+  "DEFAULT_SKETCH_PRICE_USD": 100
+}

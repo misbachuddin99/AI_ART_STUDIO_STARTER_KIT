@@ -1,0 +1,102 @@
+﻿============================================================
+PANDUAN SETUP STARTER KIT EKOSISTEM AI STUDIO (KHUSUS SKETSA)
+============================================================
+
+Langkah 1: Perangkat Lunak Wajib (Tautan Unduhan Resmi)
+------------------------------------------------------------
+1. Python 3.10 / 3.11:
+   👉 Unduh: https://www.python.org/downloads/
+   *PENTING: Saat instalasi, wajib centang kotak "Add Python to PATH".
+
+2. Git for Windows:
+   👉 Unduh: https://git-scm.com/download/win
+   *Pasang dengan setelan default (Next terus sampai selesai).
+
+3. LM Studio (Mesin AI Lokal):
+   👉 Unduh: https://lmstudio.ai/
+   - Buka LM Studio, di kolom pencarian model unduh salah satu model vision:
+     • "Qwen2.5-VL-3B-Instruct" (Sangat direkomendasikan, ringan dan cerdas)
+     • atau "Qwen3-VL-2B-Instruct"
+
+4. Buka CMD / PowerShell di PC Anda, lalu pasang pustaka pendukung dengan mengetik:
+   pip install pillow piexif python-telegram-bot requests httpx
+
+
+Langkah 2: Buat Bot Telegram Sendiri (Hanya 2 Menit)
+------------------------------------------------------------
+1. Buka tautan pembuat bot resmi Telegram di HP/PC:
+   👉 Akun BotFather: https://t.me/BotFather
+   - Kirim perintah: /newbot
+   - Berikan nama bot dan username (contoh: galeri_sketsa_bot).
+   - Salin kode HTTP API TOKEN yang diberikan.
+
+2. Cek angka ID akun Telegram Anda:
+   👉 Akun UserInfoBot: https://t.me/userinfobot
+   - Tekan Mulai/Start, salin deretan angka "Id" Anda (contoh: 6300301484).
+
+
+Langkah 3: Atur File config.json
+------------------------------------------------------------
+Buka file "config.json" di folder ini menggunakan Notepad, lalu sesuaikan:
+- ARTIST_NAME        : Nama seniman / pemilik karya.
+- ARTIST_EMAIL       : Alamat email untuk menerima order/inquiry karya.
+- INSTAGRAM_USERNAME : Username Instagram Anda (tanpa tanda @).
+- TELEGRAM_BOT_TOKEN : Token bot dari @BotFather tadi.
+- AUTHORIZED_USER_ID : Angka ID Telegram Anda dari @userinfobot tadi.
+*Simpan file setelah selesai diedit (Ctrl + S).
+
+
+Langkah 4: Menghubungkan Web Gratis (GitHub Pages & Vercel)
+------------------------------------------------------------
+1. Buat akun GitHub:
+   👉 https://github.com/signup
+   - Buat repositori publik baru: https://github.com/new
+     Beri nama repositori (misal: "katalog-sketsa"). Biarkan opsi lain kosong, klik "Create repository".
+
+2. Hubungkan folder galeri komputer ke GitHub:
+   - Buka CMD/Terminal di folder: SKETCH\web_galeri
+   - Jalankan 3 baris perintah ini satu per satu:
+     git init
+     git branch -M main
+     git remote add origin https://github.com/USERNAME_ANDA/katalog-sketsa.git
+
+3. Aktifkan GitHub Pages:
+   - Buka menu Settings repositori Anda: https://github.com/USERNAME_ANDA/katalog-sketsa/settings/pages
+   - Di bagian "Branch", pilih "main" dan folder "/(root)", lalu klik "Save".
+
+4. Hubungkan ke Hosting Cepat Vercel:
+   👉 https://vercel.com/signup
+   - Masuk (Login) menggunakan akun GitHub Anda.
+   - Klik tombol "Add New..." -> pilih "Project".
+   - Cari repositori "katalog-sketsa", lalu klik tombol biru "Import".
+   - Langsung klik "Deploy". Selesai! Web Anda aktif secara global.
+
+
+Langkah 5: Pemasangan Tema di Blogspot / Blogger (Opsional)
+------------------------------------------------------------
+1. Masuk ke dasbor Blogger:
+   👉 https://www.blogger.com
+   - Buat blog baru (misal: sketsaseni.blogspot.com).
+
+2. Pasang Tampilan Galeri Elegan:
+   - Di menu kiri Blogger, klik "Tema" (Theme).
+   - Klik tanda panah bawah di samping tombol "Sesuaikan" -> pilih "Edit HTML".
+   - Buka file "tema_blogspot_starter.xml" di folder ini pakai Notepad, salin semua kodenya (Ctrl + A lalu Ctrl + C).
+   - Hapus semua kode lama di Blogger, tempel kode baru (Ctrl + V), lalu klik ikon Simpan (Disket) di kanan atas.
+
+
+Langkah 6: Cara Menjalankan Sehari-hari
+------------------------------------------------------------
+1. Buka aplikasi LM Studio -> Muat model Qwen -> Buka tab Developer -> Klik tombol "Start Server" (pastikan port 1234 aktif).
+2. Klik 2x file "JALANKAN_BOT.bat".
+3. Dari kamera HP Anda, potret gambar sketsa di atas meja, kirim fotonya ke bot Telegram Anda.
+4. Periksa draf kurasi & artist statement otomatis dari AI, lalu tekan "SETUJUI & PUBLIKASIKAN".
+   Karya otomatis terarsip, resolusi dioptimasi, EXIF tersuntik, dan langsung live di GitHub Pages, Vercel, serta Blogspot dengan tampilan 2 kartu mobile!
+
+------------------------------------------------------------
+KONTAK & BANTUAN
+------------------------------------------------------------
+Jika menemui kendala teknis dalam proses instalasi atau alur sinkronisasi:
+• Diskusi & Bantuan Pengembang: Maruto Septriono
+• Konsultasi Langsung via Instagram: https://ig.me/m/maruto.septriono
+============================================================
